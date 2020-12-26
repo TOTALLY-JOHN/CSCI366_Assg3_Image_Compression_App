@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/processedImageView"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/originalTextView" />
+
+    <TextView
+        android:id="@+id/browseCSZTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="Browse CSZ file"
+        android:textColor="#070000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/processTextView" />
+
+    <TextView
+        android:id="@+id/processTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="20dp"
+        android:text="Compress"
+        android:textColor="#070000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/browseCSZTextView"
+        app:layout_constraintStart_toEndOf="@+id/browseTextView" />
+
+    <ImageButton
+        android:id="@+id/browseCSZButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="loadCSZFile"
+        app:layout_constraintBottom_toTopOf="@+id/browseCSZTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/processButton"
+        app:srcCompat="@drawable/csz_icon" />
+
+    <ImageButton
+        android:id="@+id/processButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="imageProcess"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/processTextView"
+        app:layout_constraintEnd_toStartOf="@+id/browseCSZButton"
+        app:layout_constraintStart_toEndOf="@+id/browseButton"
+        app:srcCompat="@drawable/compress_icon" />
+
+    <ImageButton
+        android:id="@+id/browseButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="loadImage"
+        app:layout_constraintBottom_toTopOf="@+id/browseTextView"
+        app:layout_constraintEnd_toStartOf="@+id/processButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/search_icon" />
+
+    <TextView
+        android:id="@+id/browseTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="20dp"
+        android:text="Browse Image"
+        android:textColor="#070000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/processTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/originalImageView"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/processedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Compress Details"
+        android:textColor="#000000"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/processedImageView" />
+
+    <TextView
+        android:id="@+id/originalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Original Image Details"
+        android:textColor="#000000"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/originalImageView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
